@@ -1,0 +1,100 @@
+!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Changes in snow cover (2009-2020) in the mountain regions of the Gunnison National Forest, USA.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back to Home Page</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio</a></li>
+							<li class="active"><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">May 2021</span>
+									<h1>Differences in snow coverege</h1>
+									<p>The main idea is a calculation and show on the map how the climate change affects the snow area in the region of the Gunnison National Forest, USA.</p>
+								</header>
+								<div class="image main"><img src="images/Aspen_snow.jpg" alt="" /></div>
+<p><h3>Research Goal</h3></p>
+    <p>The climat change affects the snow volume at the mouting region at the Gunnison National Forest, USA. The main goal of this project is evaluation of the historical trend of the snow volume and show this trend on the map.<p/>
+<p><h3>Image Source</h3></p>
+	<p>Two images downloaded from https://earthexplorer.usgs.gov/ for two dates: December 2009 and December 2020 (Lansat 7 ETM+ C1 Level-1 images)</p>
+<p><h3>Research Process</h3></p>
+	<p>A new ArcMap document was created and set it up per the usual settings (default geodatabase, save the document, set up environment, etc). This project id a part of <a href="https://www.coursera.org/specializations/gis">Geographic Information Systems (GIS) Specialization</a> 
+		taught by UC Davis through Coursera.</p>
+	<p>	Image Classification process was repeated twice for 2020 Image and 2009 Image.
+        multi-band raster imagery was converted into a single-band raster with a number of categorical classes that related to different types 
+        of land cover: <i>Composite Bands Tool (Data Management)</i>  for bands 1, 2, 3.
+        A <i>Training Samples Manager</i> was created with a minimum of 10 training samples for 5 different classes: Snow, Snow in Shadow, Land, Land in Shadow, Lake.</p> 
+<img src="Project1/images/TrainingSamples.png" alt="Training Samples" width="300" height="100" align="right" vspace="20" hspace="20">
+    <p>Training Samples Manager saved as a <i>Signature File</i>.<i>Maximum Likelihood Classification Tool</i> run. <i>Symbology</i> in an output classified layer set.</p>
+    <p><h3>Model Builder</h3></p>
+	<img src="Project1/images/ModelBuilder.png" alt="Model Builder" width=800" height="200">
+	<p>	A <i>Majority Filter Tool</i> was used to improve the quality of the classified layer. Rectangular shapefile for <i>Clip Tool: Draw, Rectangular, 
+		Convert Graphics to Features</i> created.</p>
+	<img src="Project1/images/Image2.png" alt="Table" width="200" height="200" align="right" vspace="10" hspace="10">
+    <p>A <i>Clip Tool</i> was used to remove all <i>Null</i> values. The values related to snow (Snow+Snow in Shadow) were extracted by <i>Extract by Attributes Tool</i>. 
+     The map was devided by <i>Create Fishnet Tool</i> to the grud (10x10). Detailed analysis of the snow areas differences between 2020 image and 2009 image was conducted 
+	 by <i>Tabulate Area Tool.</i></p>
+    <p>	The Percent_2009_vs_2020 calculated by formula: Percent=(2009-2020)/2009*100. The result of the cacculation is presented in the table below (the last colunm).</p>
+<img src="Project1/images/Image3.png" alt="Table" width="700" height="200">
+    <p>To show differences in snow coverage between images 2020 and 2009 the <i>Difference</i> option in <i>Image Analysis</i> window was used. The result is presented on the map. 
+	The <i>Classification statistics</i> in <i>Symbology</i> was used on the basis of the table. The green colors show the areas where (2009-2020)>0: The snow cover area decreesed from 2009 to 2020; 
+	the red colors show the areas where (2009-2020)<0: The snow area increesed from 2009 to 2020. </p>
+<p><h3>Result</h3></p>
+<p>Analysis of the table and map shows that the total area of snow coverage in 2009 greater than in 2020 at average for <i>30 percent</i>.</p>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

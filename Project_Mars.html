@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Back to Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">GIS Projects</a></li>
+							<li><a href="https://arcg.is/yPL4u">ArcGIS StoryMaps</a></li>
+							<li></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">May 2021</span>
+									<h1>Planning Mars Rover Mission with ArcMap</h1>
+								</header>
+								<div class="image main"><img src="Project_Mars/Map.jpg" alt="Mars South Pole" /></div>
+								<p>The main goal of the Mars to create our ArcGIS Project to automate the process of programming rover’s trajectory of motion 
+									on the Martian surface. We plan to use our GIS projects to establish the best rover’s rote for each site candidate. This project id a part of <a href="https://www.coursera.org/specializations/gis">Geographic Information Systems (GIS) Specialization</a> 
+									taught by UC Davis through Coursera.</p>
+								<p><h3>Image Source</h3></p>
+								<p><a href="https://mars.nasa.gov/resources/25996/mars-express-views-red-planets-south-pole/">ESA’s Mars Express 
+									image of Mars South Poole area</a> of on Dec. 17, 2012, in Infrared, Green and Blue bands, using its 
+									High Resolution Stereo Camera (HRST) .</p>
+                                <p><h3>Research process</h3></p>
+								<p>The image was added to the map document. The original image is too big to work with. We created a rectangle 
+									shape file by Draw Tool and clipped an area around a South Pole. It is our point 
+									of the interest on the Mars surface.</p>
+								<p>The rovers cannot “jumps” оr climb steps. It is their constructive features which should be taken into 
+									account while mapping their potential way on the Mars surface. This is an important limitation because the 
+									Mars surface is covered by craters and hills. The rover path should be as flat as possible. Therefore, 
+									we are going to design a ModelBuilder based on the water streams idea (Hydrology Tools) to create a flat rover path from 
+									the starting point to the highest point of the Polar Cup. As a result, we get a model of the Mars surface
+									 covered by a net of connected lines. We are able to select one of the paths manually accordingly
+									  to our scientific goal.</p>
+								<img src="image main"><img src="Project_Mars/ModelBuilder.jpg" alt="ModelBuilder" width="600" height="250">
+								<p>At first, the layer was filled to reduce small imperfections in the data. After that, a raster of flow direction 
+									from each cell to its steepest downslope neighbor from that filled DEM was created (Output Flow Direction raster in the ModelBulder.
+									 And then we created the flow accumulation raster. To select the south faced slopes of the hills we accumulated flow into each sell, created raster linear
+									  network between intersections. Finally, the Stream to Feature Tool helped us create a feature representing
+									   the linear network.</p>
+								<p> If we marked two layers on the map (Mars South Pole layer and Stream layer) we see that the Mars surface covered by a net of a number 
+									 connected lines (similar to stream flow). We are able to select one of the paths manually accordingly to our scientific goal. 
+									 We want to reach the pure iced area (the whitest color) on the top of the pole. It can be done right now but
+									  postponed for a future because the float slope road is not the only prerequisition of the best choice. 
+									  The other two are south facing and low slopes.</p>
+								<p>The Slope Tool was used to create a map for slops. The Symbology of the layer Slope was reclassified. The three
+									 green colors show the possible slope angles (up to 44 degree) which are welcome to rover. The red colors show 
+									 the dangerous areas accordingly.</p>
+                                <p>The Aspect Tool identifies the downslope direction of the maximum rate of change in value from each cell to its
+									 neighbors. It can be thought of as the slope direction. The Raster calculator helped to choose the areas with
+									  south facing accordingly to the <a href="https://desktop.arcgis.com/en/arcmap/10.3/tools/spatial-analyst-toolbox/how-aspect-works.html">Tool guidance</a> .</p>
+								<p>The rover uses a solar panel as a power source. Therefore, we received the Slope_south layer. The yellow color
+									 on the map shows the sun areas, the other part of the map set as Hollow for best view. Here we should note
+									  that we assume that Aspect Tool works on Mars the same way as on Earth. </p>
+								<p>We could have combined Slope and Slope_south layers but decided to leave them separately. It is better for
+									 analytical reasoning having as many information as possible.</p>
+								<p>Metadata in ArcMap was added in order to make our data reusable.</p>
+								<p><h3>Results</h3></p>
+								<p>	 The map for the best rover path on the Martian surface was created and presented at the top of the page.
+									  The Legend shows details of the map. The green colors display the slope angles (lower than 44 degrees, 
+									  inclusive) which are safe for the rover to embark on. The red colors show the dangerous areas 
+									  (over than 45 degrees accordingly). The yellow color represents 
+									the sun faced areas where the rover's solar panels will work most effectively. The blue line is the 
+									flat rover's path from the foothills to the Mars South Pole.</p>
+								
+							</section>
+
+					</div>
+
+				
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
